@@ -1,0 +1,130 @@
+body {
+  font-family: 'Nanum Gothic', sans-serif;
+  margin: 0;
+  background-color: #fdfdfd;
+  color: #333;
+}
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+}
+.site-header h1 {
+  font-size: 1.5rem;
+}
+.site-header ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+.feed-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .feed-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .feed-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.feed-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+.feed-card img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+.feed-card .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  opacity: 0;
+  transition: 0.3s;
+}
+.feed-card:hover .overlay {
+  opacity: 1;
+}
+
+.like-btn {
+  position: absolute;
+  top: 12px;
+  right: 30px;
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: color 0.3s;
+  z-index: 20;
+  padding: 4px;
+}
+.like-btn:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+.like-btn.liked {
+  color: red;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+body.dark-mode .site-header {
+  background-color: #1e1e1e;
+  border-bottom: 1px solid #444;
+}
+
+#dark-mode-toggle {
+  font-size: 1.8rem;
+  padding: 8px 14px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: inherit;
+  transition: color 0.3s ease, transform 0.2s ease;
+  border-radius: 8px;
+}
+
+#dark-mode-toggle:hover, 
+#dark-mode-toggle:focus {
+  color: #999;
+  transform: scale(1.1);
+  outline: none;
+}
+
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  padding: 10px 15px;
+  font-size: 30px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+  text-shadow: 0 0 4px white, 0 0 10px rgba(0,0,0,0.8);
+}
+
