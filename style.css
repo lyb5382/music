@@ -1,0 +1,88 @@
+body {
+  font-family: 'Nanum Gothic', sans-serif;
+  margin: 0;
+  background-color: #fdfdfd;
+  color: #333;
+}
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+}
+.site-header h1 {
+  font-size: 1.5rem;
+}
+.site-header ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+.feed-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 항상 3개의 열 */
+  gap: 15px;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .feed-grid {
+    grid-template-columns: repeat(2, 1fr); /* 중간 사이즈일 때 2개 */
+  }
+}
+
+@media (max-width: 480px) {
+  .feed-grid {
+    grid-template-columns: 1fr; /* 모바일일 때 1개 */
+  }
+}
+.feed-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+.feed-card img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+.feed-card .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  opacity: 0;
+  transition: 0.3s;
+}
+.feed-card:hover .overlay {
+  opacity: 1;
+}
+
+.like-btn {
+  position: absolute;
+  top: 12px;
+  right: 30px;
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: color 0.3s;
+  z-index: 20;
+  padding: 4px;
+}
+
+.like-btn:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.like-btn.liked {
+  color: red;
+}
