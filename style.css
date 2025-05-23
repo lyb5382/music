@@ -23,19 +23,18 @@ body {
 
 .feed-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 항상 3개의 열 */
+  grid-template-columns: repeat(3, 1fr);
   gap: 15px;
   padding: 20px;
 }
 @media (max-width: 768px) {
   .feed-grid {
-    grid-template-columns: repeat(2, 1fr); /* 중간 사이즈일 때 2개 */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media (max-width: 480px) {
   .feed-grid {
-    grid-template-columns: 1fr; /* 모바일일 때 1개 */
+    grid-template-columns: 1fr;
   }
 }
 .feed-card {
@@ -78,11 +77,54 @@ body {
   z-index: 20;
   padding: 4px;
 }
-
 .like-btn:hover {
   color: rgba(255, 255, 255, 0.9);
 }
-
 .like-btn.liked {
   color: red;
 }
+
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+body.dark-mode .site-header {
+  background-color: #1e1e1e;
+  border-bottom: 1px solid #444;
+}
+
+#dark-mode-toggle {
+  font-size: 1.8rem;       /* 글자 크기 확대 */
+  padding: 8px 14px;       /* 버튼 패딩 키워 클릭 영역 확장 */
+  background-color: transparent;  /* 배경 투명 */
+  border: none;            /* 테두리 제거 */
+  outline: none;           /* 포커스 외곽선 제거 */
+  cursor: pointer;
+  color: inherit;          /* 텍스트 색상은 상속 */
+  transition: color 0.3s ease, transform 0.2s ease;
+  border-radius: 8px;      /* 부드러운 모서리 */
+}
+
+#dark-mode-toggle:hover, 
+#dark-mode-toggle:focus {
+  color: #999;             /* 호버 시 색상 변화 (부드럽게) */
+  transform: scale(1.1);   /* 살짝 커짐 효과 */
+  outline: none;           /* 포커스 시에도 외곽선 제거 유지 */
+}
+
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  padding: 10px 15px;
+  font-size: 30px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+  text-shadow: 0 0 4px white, 0 0 10px rgba(0,0,0,0.8);
+}
+
