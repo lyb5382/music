@@ -16,3 +16,4 @@ document.getElementById('scrollTopBtn').addEventListener('click', () => {
 document.getElementById("darkToggle").addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
 });
+
